@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKit_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-xC-Ffr">
+                                <rect key="frame" x="105.5" y="274.5" width="203" height="32"/>
+                                <segments>
+                                    <segment title="Night Visions"/>
+                                    <segment title="Origins"/>
+                                </segments>
+                                <connections>
+                                    <action selector="albumSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="SO8-4C-EeJ"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagine Dragons" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-Rf-wYp">
+                                <rect key="frame" x="142" y="224" width="130" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="ore-Aa-ddH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumping" translatesAutoresizingMaskIntoConstraints="NO" id="w7O-VI-lPp">
+                                <rect key="frame" x="132" y="74" width="150" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aYz-83-sGw"/>
+                                    <constraint firstAttribute="width" constant="150" id="avp-h9-6Aj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23v-2c-edB">
+                                <rect key="frame" x="119" y="380.5" width="43.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="eSm-gc-w6T">
+                                <rect key="frame" x="139" y="451" width="217" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idx-PW-ddT">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="oV7-gI-0UQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-wF-7kb">
+                                        <rect key="frame" x="69" y="0.0" width="150" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="Hrh-ss-yaB"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="TtA-hW-Kw1"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tZ8-wF-7kb" secondAttribute="bottom" constant="70" id="AbW-qB-EMc"/>
+                                    <constraint firstAttribute="trailing" secondItem="tZ8-wF-7kb" secondAttribute="trailing" constant="30" id="DFc-dq-54t"/>
+                                </constraints>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bW3-Dj-fGv">
+                                <rect key="frame" x="222.5" y="380.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleCaps:" destination="BYZ-38-t0r" eventType="valueChanged" id="k6j-Ac-wRy"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bW3-Dj-fGv" firstAttribute="leading" secondItem="23v-2c-edB" secondAttribute="trailing" constant="60" id="8Wf-3B-UWA"/>
+                            <constraint firstItem="RtK-Rf-wYp" firstAttribute="top" secondItem="w7O-VI-lPp" secondAttribute="bottom" constant="50" id="FXq-4S-XI8"/>
+                            <constraint firstItem="23v-2c-edB" firstAttribute="top" secondItem="rhq-xC-Ffr" secondAttribute="bottom" constant="75" id="GuM-qH-InF"/>
+                            <constraint firstItem="rhq-xC-Ffr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MrA-tb-85x"/>
+                            <constraint firstItem="RtK-Rf-wYp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tai-Io-z1F"/>
+                            <constraint firstItem="rhq-xC-Ffr" firstAttribute="top" secondItem="RtK-Rf-wYp" secondAttribute="bottom" constant="30" id="ZV9-cU-V2o"/>
+                            <constraint firstItem="bW3-Dj-fGv" firstAttribute="top" secondItem="rhq-xC-Ffr" secondAttribute="bottom" constant="75" id="j3F-dy-hE0"/>
+                            <constraint firstItem="w7O-VI-lPp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q73-pk-2IC"/>
+                            <constraint firstItem="w7O-VI-lPp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="qVb-8c-lB9"/>
+                            <constraint firstItem="23v-2c-edB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="zlM-F7-xY7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="capSwitch" destination="bW3-Dj-fGv" id="nTf-o5-4Rm"/>
+                        <outlet property="coverImg" destination="w7O-VI-lPp" id="2uG-Wn-udz"/>
+                        <outlet property="fontSize" destination="idx-PW-ddT" id="aan-tF-oXV"/>
+                        <outlet property="fsSlide" destination="tZ8-wF-7kb" id="c0f-Zw-PTv"/>
+                        <outlet property="titleText" destination="RtK-Rf-wYp" id="poU-dL-T3j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="jumping" width="150" height="100"/>
+    </resources>
+</document>
