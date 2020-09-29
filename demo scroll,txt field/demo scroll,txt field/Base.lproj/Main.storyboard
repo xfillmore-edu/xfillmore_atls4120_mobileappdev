@@ -116,6 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="checkAmount" destination="TLm-uQ-uk2" id="xCx-vx-zUJ"/>
                         <outlet property="numPeople" destination="xK3-2P-iiJ" id="lzy-ec-Xs3"/>

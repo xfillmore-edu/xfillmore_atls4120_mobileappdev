@@ -43,7 +43,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let tip = amount * percentage
         let total = amount + tip
         var personTotal: Float = 0.0
-        personTotal = total / Float(numPeople)
+        
+        if numPeople > 0 {
+            personTotal = total / Float(numPeople)
+        }
+        else {
+            // self refers to current instance of class -- in this case, view controller
+            let alert = UIAlertController(title: "Warning", message: "Cannot calculate tip for 0 people", preferredStyle: UIAlertController.Style.alert)
+            // create UIAlertAction object for button
+            let cancelAction = UIAlertAction(title: "Go back", style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(cancelAction) // adds alert action to alert object
+            let okAction = UIAlertAction("title: OK", style: UIAlertAction.Style.cancel, handler: { action in
+                self.numPeopleStep.value = 1
+                self.numPeopleLabel.text? = "1 person"
+                self.calculateTotals()
+            })
+        }
+        
         
         // format results as currency
         let currencyFormatter = NumberFormatter()
