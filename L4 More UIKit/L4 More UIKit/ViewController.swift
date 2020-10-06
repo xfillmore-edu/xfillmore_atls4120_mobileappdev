@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dismissKeyboard()
         
         // generate random number within specified range
-        let randVal : UInt32 = UInt32(arc4random_uniform(UInt32(rangeStep.value)))
+        let randVal : UInt32 = UInt32(arc4random_uniform(UInt32(rangeStep.value)+1))
         var message_ : String = ""
         
         // read value from guessInput and check for numeric validity
@@ -39,8 +39,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if (guessInput.text!.isEmpty) {
             message_ = "You didn't provide a guess."
         }
-        else if (Int32(guessInput.text!)! < 0 || Int32(guessInput.text!)! > randVal) {
-            message_ = "Your guess wasn't within range."
+        else if (Int32(guessInput.text!)! < 0 || Int32(guessInput.text!)! > Int32(rangeStep.value)) {
+            message_ = "Your guess wasn't within range. The number was " + String(randVal)
         }
             
         // compare guessInput with random number and determine points
@@ -52,10 +52,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 pointsLabel.text = "Points: " + String(points)
             }
             else if (guessVal > randVal) {
-                message_ = "Your guess was too high."
+                message_ = "Your guess was too high. The number was " + String(randVal)
             }
             else { // guessVal < randVal
-                message_ = "Your guess was too low."
+                message_ = "Your guess was too low. The number was " + String(randVal)
             }
         }
         
@@ -64,6 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(okAction)
 //        Alert(title: "Result", message: message_)
+        present(alert, animated: true, completion: nil)
     }
     
     func dismissKeyboard() {
