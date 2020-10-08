@@ -15,6 +15,10 @@
 //
 // Table View -> Editable list
 // https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+// https://developer.apple.com/documentation/uikit/views_and_controls/table_views
+//    will require delegate (UITableViewDelegate)/protocol (UITableViewDataSource) setup
+//    recommend using UITableViewController
+//    perform actions on rows using UISwipeActionsConfiguration and UIContextualAction?
 
 
 
