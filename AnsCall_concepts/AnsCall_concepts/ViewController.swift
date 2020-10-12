@@ -24,12 +24,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+//struct Astronaut {
+//    var name:String
+//    var skill:Int
+//    init(_ name_:String,_ skill_:Int) {
+//        self.name = name_
+//        self.skill = skill_
+//    }
+//}
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
     // timer/fuel proof of concept (variables)
     var fuelGauge: Float = 0.00
@@ -75,16 +80,48 @@ class ViewController: UIViewController {
         calculateSuccess()
     }
     
+    
+    // Table View proof of concept
+    // assign tableViewName.delegate = self and tableViewName.dataSource = self in viewDidLoad()
+    // add UITableViewDelegate and UITableViewDataSource to ViewController class
     struct Astronaut {
-        var name:String
-        var technicalBonus:Int
-        var blackoutSpeed:Int
-        
-        
+        var name :String
+        var skill :Int
+        init(name: String, skill: Int) {
+            self.name = name
+            self.skill = skill
+        }
     }
+    var astr1 = Astronaut(name: "qwerty", skill: 5)
+    var astr2 = Astronaut(name: "asdf", skill: 3)
+    var astr3 = Astronaut(name: "artemis", skill: 9)
+    var astr4 = Astronaut(name: "curiosity", skill: 8)
+    var astr5 = Astronaut(name: "isaac asimov", skill: 10)
+//    var astronauts = [astr1, astr2, astr3, astr4, astr5] // https://developer.apple.com/forums/thread/118026
+//    var astronauts:[Astronaut] = [] // https://developer.apple.com/forums/thread/98132
+//    astronauts[0] = astr1 // consecutive declarations error
+//    astronauts.append(astr1) // consecutive declarations error but https://stackoverflow.com/questions/26821347/how-do-you-load-structs-into-an-array
+//    astronauts.insert(astr1, at: 0) // consecutive declarations error
+
+    // array method for removing elements is .remove(at: index)
     
+    // https://www.youtube.com/watch?v=FRQ9-HKkSow
+    @IBOutlet weak var namesTableView: UITableView!
+    // can use arrayName.count
+    var numSelectedAstronauts : Int = 5 // will be initialized to 0 and be capped at 5
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numSelectedAstronauts;
+    }
+    var astronauts = ["one", "two", "three", "four", "five"] // because struct isn't working
     
+    // creates cell objects
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // withIdentifier comes from the identifier specified under the attributes inspector for the prototype cell -> create table, set prototype cells to 1, select prototype cell, modify its identifier
+        let cell = namesTableView.dequeueReusableCell(withIdentifier: "astronautCell", for: indexPath)
+        cell.textLabel?.text = astronauts[indexPath.row]//.name
+        return cell
+    }
     
     
     
@@ -95,6 +132,18 @@ class ViewController: UIViewController {
         fuelbtn.setTitle("Start", for: .normal)
         
         missionDifficulty = 100
+    }
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        namesTableView.delegate = self
+        namesTableView.dataSource = self
     }
 }
 
