@@ -19,6 +19,8 @@
 //    will require delegate (UITableViewDelegate)/protocol (UITableViewDataSource) setup
 //    recommend using UITableViewController
 //    perform actions on rows using UISwipeActionsConfiguration and UIContextualAction?
+// individual cell colors https://stackoverflow.com/a/38846099
+// UITableViewDelegate https://developer.apple.com/documentation/uikit/uitableviewdelegate
 
 
 
@@ -91,6 +93,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.name = name
             self.skill = skill
         }
+        init() {
+            self.name = ""
+            self.skill = 0
+        }
     }
     var astr1 = Astronaut(name: "qwerty", skill: 5)
     var astr2 = Astronaut(name: "asdf", skill: 3)
@@ -98,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var astr4 = Astronaut(name: "curiosity", skill: 8)
     var astr5 = Astronaut(name: "isaac asimov", skill: 10)
 //    var astronauts = [astr1, astr2, astr3, astr4, astr5] // https://developer.apple.com/forums/thread/118026
-//    var astronauts:[Astronaut] = [] // https://developer.apple.com/forums/thread/98132
+    var astronauts : [Astronaut] = [] // https://developer.apple.com/forums/thread/98132
 //    astronauts[0] = astr1 // consecutive declarations error
 //    astronauts.append(astr1) // consecutive declarations error but https://stackoverflow.com/questions/26821347/how-do-you-load-structs-into-an-array
 //    astronauts.insert(astr1, at: 0) // consecutive declarations error
@@ -113,13 +119,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numSelectedAstronauts;
     }
-    var astronauts = ["one", "two", "three", "four", "five"] // because struct isn't working
+//    var astronauts = ["one", "two", "three", "four", "five"] // because struct isn't working
     
     // creates cell objects
+    // SwiftUI error handler added private to fn type, with willDisplayCell and without let cell=...dequeueResusableCell... -- follows delegate protocol but upsets datasource protocol
+//    private func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // withIdentifier comes from the identifier specified under the attributes inspector for the prototype cell -> create table, set prototype cells to 1, select prototype cell, modify its identifier
         let cell = namesTableView.dequeueReusableCell(withIdentifier: "astronautCell", for: indexPath)
-        cell.textLabel?.text = astronauts[indexPath.row]//.name
+        
+        cell.textLabel?.text = astronauts[indexPath.row].name
         return cell
     }
     
@@ -144,6 +153,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         namesTableView.delegate = self
         namesTableView.dataSource = self
+        
+        astronauts = [astr1, astr2, astr3, astr4, astr5]
+        // declare vars at top of class and initialize in viewDidLoad to use in all class
     }
 }
 
