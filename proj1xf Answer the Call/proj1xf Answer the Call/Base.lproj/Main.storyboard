@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="proj1xf_Answer_the_Call" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-K9-nHg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="962"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-dA-hhk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="962"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="osZ-gP-RJv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B3s-dA-hhk" firstAttribute="trailing" secondItem="nDF-P2-6Z9" secondAttribute="trailing" id="G2x-zb-mwG"/>
+                                    <constraint firstItem="B3s-dA-hhk" firstAttribute="bottom" secondItem="nDF-P2-6Z9" secondAttribute="bottom" id="oIh-Lf-SfH"/>
+                                    <constraint firstItem="B3s-dA-hhk" firstAttribute="top" secondItem="nDF-P2-6Z9" secondAttribute="top" id="rr3-jd-lI0"/>
+                                    <constraint firstItem="B3s-dA-hhk" firstAttribute="leading" secondItem="nDF-P2-6Z9" secondAttribute="leading" id="y1h-g7-gMD"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="DR7-DX-O1p"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="nDF-P2-6Z9"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IqZ-K9-nHg" secondAttribute="trailing" id="P3O-Qd-N9d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IqZ-K9-nHg" secondAttribute="bottom" id="eZ5-Ci-4mP"/>
+                            <constraint firstItem="IqZ-K9-nHg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f7t-9Y-Fka"/>
+                            <constraint firstItem="IqZ-K9-nHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hDr-SD-KwE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="1040"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>
