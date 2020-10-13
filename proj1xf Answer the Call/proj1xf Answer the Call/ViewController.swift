@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var numFinsTxtField: UITextField!
     @IBOutlet weak var fuelPumpGaugeLabel: UILabel!
     @IBOutlet weak var fuelPumpBtn: UIButton!
-    @IBOutlet weak var locLattSlider: UISlider!
+    @IBOutlet weak var locLatiSlider: UISlider!
     @IBOutlet weak var locLongSlider: UISlider!
     @IBOutlet weak var astronautsTableView: UITableView!
     @IBOutlet weak var selectedAstrLabel: UILabel!
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locLattSlider.value = 0
+        locLatiSlider.value = 0
         locLongSlider.value = 0
         
         astronautsTableView.delegate = self
@@ -125,8 +125,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // https://www.hackingwithswift.com/articles/117/the-ultimate-guide-to-timer
     //
     @objc func PumpFuel() {
-        fuelGauge += 0.16
-        fuelPumpGaugeLabel.text = String(format: "%.2f", fuelGauge) + " units"
+        fuelGauge += 89.76
+        fuelPumpGaugeLabel.text = String(format: "%.2f", fuelGauge)
+        
     }
     @IBAction func pumpFuel(_ sender: Any) {
         if (fuelPumpActive == false) {
@@ -169,7 +170,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dashboardLabel.text = "> You have not yet launched"
         
         // reset fuel -- also account for if running still
-        fuelGauge = 0.00
         fuelPump.invalidate()
         fuelPumpBtn.setTitle("Start", for: .normal)
         fuelPumpActive = false
@@ -190,7 +190,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let landMD = Int.random(in: 10...95)
         var landSP = 0
         
-        // use locLattSlider and locLongSlider values
+        // use locLatiSlider and locLongSlider values for geography
         
         if (launchSP < launchMD) {
             //
@@ -235,6 +235,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             } // travel
         } // launch
         
+        fuelGauge = 0.00
         
     } // end blast off button action function
     
