@@ -86,6 +86,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         astronautsTableView.delegate = self
         astronautsTableView.dataSource = self
         
+        // scroll view external resource(s)
+        // https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithScrollViews.html
+        
     }
     
     // ///////////////////////////////////////////////////// //
