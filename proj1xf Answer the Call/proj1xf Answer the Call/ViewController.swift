@@ -25,10 +25,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // fuel timer variables
     var fuelGauge : Float = 0.00
     var fuelPump = Timer()
-    var fuelPumpActive : Bool = false
+    var fuelPumpActive = false
     
     // astronauts table view variables
     // added Hashable due to error with astronauts set
+    // https://stackoverflow.com/questions/26821347/how-do-you-load-structs-into-an-array
+    // https://developer.apple.com/forums/thread/118026
+    // https://developer.apple.com/forums/thread/98132
+    // https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+    
     struct Astronaut : Hashable{
         var name :String
         var intel :Int
@@ -83,8 +88,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    // ///////////////////////////////////////////////////// //
+    // /////////////////// action functions //////////////// //
+    // ///////////////////////////////////////////////////// //
+    
     //
     // rocket boost stages segmented control
+    // no associated function
+    // value read when blast off button selected (below)
     //
     
     //
@@ -107,13 +118,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //
     // fuel pump timer
+    // https://www.youtube.com/watch?v=z2Jq5U-stag&vl=en
     //
+    @objc func PumpFuel() {
+        fuelGauge += 0.16
+        fuelPumpGaugeLabel.text = String(format: "%.2f", fuelGauge) + " units"
+    }
     @IBAction func pumpFuel(_ sender: Any) {
         if (fuelPumpActive == false) {
             // button says Start
             fuelPumpActive = true
             fuelPumpBtn.setTitle("Stop", for: .normal)
-            fuelPump = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(FuelPump), userInfo: nil, repeats: true)
+            fuelPump = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(PumpFuel), userInfo: nil, repeats: true)
         }
         else {
             // button says Stop
@@ -123,13 +139,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    @objc func FuelPump() {
-        fuelGauge += 0.16
-        fuelPumpGaugeLabel.text = String(format: "%.2f", fuelGauge) + " units"
-    }
     
     //
     // Astronauts table view manipulation
+    // https://developer.apple.com/documentation/uikit/views_and_controls/table_views
+    // individual cell colors https://stackoverflow.com/a/38846099
+    // UITableViewDelegate https://developer.apple.com/documentation/uikit/uitableviewdelegate
+    // https://www.youtube.com/watch?v=FRQ9-HKkSow
     //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return astronauts.count;
@@ -147,6 +163,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func blastOffBtn(_ sender: UIButton) {
         // clear flight dashboard
         dashboardLabel.text = "> You have not yet launched"
+        
+        // reset fuel -- also account for if running still
+        fuelGauge = 0.00
+        fuelPump.invalidate()
+        fuelPumpBtn.setTitle("Start", for: .normal)
+        fuelPumpActive = false
+        fuelPumpGaugeLabel.text = "00.00 units"
+        
         
         // MD = mission difficulty, SP = success probability
         let launchMD = Int.random(in: 10...95)
