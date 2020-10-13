@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1339"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-nY-7dG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-nY-7dG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1305"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5v7-eQ-pza" userLabel="banner stack view">
@@ -41,6 +41,7 @@ Blast to the Moon</string>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="243" id="BvN-v9-uUa"/>
                                             <constraint firstItem="Pau-kR-6O4" firstAttribute="leading" secondItem="5v7-eQ-pza" secondAttribute="leading" id="I2k-1c-FpZ"/>
                                             <constraint firstAttribute="trailing" secondItem="vgC-IK-VwS" secondAttribute="trailing" id="QIb-YC-keP"/>
                                             <constraint firstItem="Pau-kR-6O4" firstAttribute="top" secondItem="5v7-eQ-pza" secondAttribute="top" id="ZDM-vZ-GHY"/>
@@ -54,8 +55,8 @@ Blast to the Moon</string>
                                             </mask>
                                         </variation>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-As-IsW" userLabel="blast off stack view">
-                                        <rect key="frame" x="124" y="891" width="167" height="93"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-As-IsW" userLabel="blast off stack view">
+                                        <rect key="frame" x="123.5" y="891" width="167" height="93"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czR-sp-Ezb">
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
@@ -305,8 +306,7 @@ Blast to the Moon</string>
                                                             </mask>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="fuelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0eK-q5-OBV"/>
-                                                            <action selector="pumpFuel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDa-cM-34g"/>
+                                                            <action selector="pumpFuel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7DM-Ms-DhB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -575,11 +575,11 @@ Blast to the Moon</string>
                                             <constraint firstItem="qZ9-T7-XyB" firstAttribute="centerX" secondItem="jFt-bn-SLg" secondAttribute="centerX" id="G7s-do-L4R"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-Fy-5r1" userLabel="dashboard stack view">
-                                        <rect key="frame" x="52" y="992" width="310.5" height="93.5"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-Fy-5r1" userLabel="dashboard stack view">
+                                        <rect key="frame" x="52" y="992" width="310" height="93.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="___________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S23-ys-8PI">
-                                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="310" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -607,7 +607,7 @@ Blast to the Moon</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt; You have not yet launched." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-8p-ubM">
-                                                <rect key="frame" x="0.0" y="72.5" width="310.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="72.5" width="310" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="JjJ-oC-UMF"/>
                                                 </constraints>
@@ -633,12 +633,15 @@ Blast to the Moon</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5v7-eQ-pza" firstAttribute="top" secondItem="MyG-ac-MKV" secondAttribute="top" id="2eC-Ex-Sle"/>
-                                    <constraint firstItem="5KI-As-IsW" firstAttribute="top" secondItem="jFt-bn-SLg" secondAttribute="bottom" constant="40" id="3fh-ry-Rnr"/>
-                                    <constraint firstItem="cgd-Fy-5r1" firstAttribute="top" secondItem="5KI-As-IsW" secondAttribute="bottom" constant="20" id="4z9-nt-cOn"/>
+                                    <constraint firstItem="5KI-As-IsW" firstAttribute="top" secondItem="jFt-bn-SLg" secondAttribute="bottom" constant="-42.5" id="3fh-ry-Rnr"/>
+                                    <constraint firstItem="cgd-Fy-5r1" firstAttribute="top" secondItem="5KI-As-IsW" secondAttribute="bottom" constant="8" id="4z9-nt-cOn"/>
+                                    <constraint firstItem="yV9-y4-Qkq" firstAttribute="bottom" secondItem="cgd-Fy-5r1" secondAttribute="bottom" constant="219.5" id="GJw-TS-kSE"/>
                                     <constraint firstItem="jFt-bn-SLg" firstAttribute="top" secondItem="5v7-eQ-pza" secondAttribute="bottom" constant="30" id="Jr2-kA-Ge2"/>
                                     <constraint firstAttribute="trailing" secondItem="5v7-eQ-pza" secondAttribute="trailing" id="SIE-Fx-s8e"/>
                                     <constraint firstItem="5KI-As-IsW" firstAttribute="centerX" secondItem="tQS-nY-7dG" secondAttribute="centerX" id="kkh-Zr-rtJ"/>
                                     <constraint firstItem="jFt-bn-SLg" firstAttribute="centerX" secondItem="tQS-nY-7dG" secondAttribute="centerX" id="mQ1-Ik-dtw"/>
+                                    <constraint firstItem="cgd-Fy-5r1" firstAttribute="leading" secondItem="yV9-y4-Qkq" secondAttribute="leading" constant="52" id="mdB-oe-5I4"/>
+                                    <constraint firstAttribute="bottom" secondItem="cgd-Fy-5r1" secondAttribute="bottom" constant="219.5" id="pSH-j4-dwQ"/>
                                     <constraint firstItem="5v7-eQ-pza" firstAttribute="leading" secondItem="tQS-nY-7dG" secondAttribute="leading" id="rAT-it-lJt"/>
                                     <constraint firstItem="cgd-Fy-5r1" firstAttribute="centerX" secondItem="tQS-nY-7dG" secondAttribute="centerX" id="yvu-3c-APa"/>
                                 </constraints>
@@ -648,10 +651,9 @@ Blast to the Moon</string>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tQS-nY-7dG" secondAttribute="trailing" id="UTA-a8-sK2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tQS-nY-7dG" secondAttribute="bottom" id="cOR-eQ-LOU"/>
+                            <constraint firstItem="tQS-nY-7dG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CbG-8Z-GEx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tQS-nY-7dG" secondAttribute="trailing" id="UTA-a8-sK2"/>
                             <constraint firstItem="tQS-nY-7dG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fFw-QB-erH"/>
-                            <constraint firstItem="tQS-nY-7dG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zuH-5Y-Qbh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -659,7 +661,7 @@ Blast to the Moon</string>
                     <connections>
                         <outlet property="astronautsTableView" destination="kKp-Uu-fzn" id="y2x-Da-u70"/>
                         <outlet property="dashboardLabel" destination="g0h-8p-ubM" id="ZUD-Yr-TUr"/>
-                        <outlet property="fuelPumpBtn" destination="ahd-7K-Ok9" id="K8j-FZ-Jd4"/>
+                        <outlet property="fuelPumpBtn" destination="ahd-7K-Ok9" id="m6L-Kf-dfj"/>
                         <outlet property="fuelPumpGaugeLabel" destination="fq8-H6-3g7" id="t5B-9N-sxN"/>
                         <outlet property="locLattSlider" destination="waF-UO-I8x" id="m8W-eb-KlT"/>
                         <outlet property="locLongSlider" destination="YmY-1Q-CxB" id="ZzL-9w-C76"/>

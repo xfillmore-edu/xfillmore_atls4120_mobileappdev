@@ -119,6 +119,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //
     // fuel pump timer
     // https://www.youtube.com/watch?v=z2Jq5U-stag&vl=en
+    // https://www.hackingwithswift.com/articles/117/the-ultimate-guide-to-timer
     //
     @objc func PumpFuel() {
         fuelGauge += 0.16
