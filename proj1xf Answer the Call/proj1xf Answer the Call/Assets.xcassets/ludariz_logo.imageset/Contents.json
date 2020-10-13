@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "ludariz_nobkd_dg-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ludariz_nobkd_dg-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

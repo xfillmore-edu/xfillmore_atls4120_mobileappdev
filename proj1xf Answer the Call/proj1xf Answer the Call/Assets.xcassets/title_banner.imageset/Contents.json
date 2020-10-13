@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "final_logoset-banner-2.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
+      "filename" : "final_logoset-banner-1.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
