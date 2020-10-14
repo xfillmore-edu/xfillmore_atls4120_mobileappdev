@@ -114,7 +114,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         textField.resignFirstResponder()
         return true
     }
-    // was linked to background button -- use for scroll view area
+    // linked to background button
     @IBAction func hideKeyboard(_ sender: Any) {
         dismissKeyboard()
     }
@@ -130,6 +130,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     @IBAction func pumpFuel(_ sender: Any) {
+        dismissKeyboard()
         if (fuelPumpActive == false) {
             // button says Start
             fuelPumpActive = true
@@ -152,6 +153,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // UITableViewDelegate https://developer.apple.com/documentation/uikit/uitableviewdelegate
     // https://www.youtube.com/watch?v=FRQ9-HKkSow
     //
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (selectedAstronauts[0].intel == 0) {
+            selectedAstronauts.removeFirst(1)
+        }
+        selectedAstronauts.append(astronauts[indexPath.row])
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return astronauts.count;
     }
@@ -165,9 +172,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //
     // blast off button actions
     //
+    
+    // https://www.hackingwithswift.com/articles/90/how-to-check-whether-a-value-is-inside-a-range
+    func verifyLand() -> Bool {
+        var isLand = false
+        
+        let rlat1 = 25 ... 55 // mid N. Amer
+        let rlon1 = -125 ... -72
+        let rlat2 = 30 ... 70 // upper Asia
+        let rlon2 = 49 ... 138
+        let rlat3 = 57 ... 69 // upper N. Amer
+        let rlon3 = -158 ... -94
+        let rlat4 = 5 ... 30 // upper Africa
+        let rlon4 = -13 ... 51
+        let rlat5 = 37 ... 67 // Europe
+        let rlon5 = -6 ... 60
+        let rlat6 = -30 ... 4 // lower Africa
+        let rlon6 = 11 ... 43
+        let rlat7 = 65 ... 81 // artic (greenland)
+        let rlon7 = -60 ... -16
+        let rlat8 = -24 ... 2 // upper S. Amer
+        let rlon8 = -79 ... -38
+        let rlat9 = -54 ... -30  // lower S. Amer
+        let rlon9 = -75 ... -57
+        let rlat10 = 12 ... 21  // central Amer
+        let rlon10 = -106 ... -84
+        let rlat11 = 13 ... 36 // lower Asia
+        let rlon11 = 62 ... 120
+        let rlat12 = -35 ... -15 // Australia
+        let rlon12 = 115 ... 150
+        let rlat13 = -90 ... -72 // Antarctica
+        let rlon13 = -180 ... 180
+        
+        
+        let lat = Int(locLatiSlider.value)
+        let lon = Int(locLongSlider.value)
+        
+        if (
+            (rlat1.contains(lat) && rlon1.contains(lon)) ||
+            (rlat2.contains(lat) && rlon2.contains(lon)) ||
+            (rlat3.contains(lat) && rlon3.contains(lon)) ||
+            (rlat4.contains(lat) && rlon4.contains(lon)) ||
+            (rlat5.contains(lat) && rlon5.contains(lon)) ||
+            (rlat6.contains(lat) && rlon6.contains(lon)) ||
+            (rlat7.contains(lat) && rlon7.contains(lon)) ||
+            (rlat8.contains(lat) && rlon8.contains(lon)) ||
+            (rlat9.contains(lat) && rlon9.contains(lon)) ||
+            (rlat10.contains(lat) && rlon10.contains(lon)) ||
+            (rlat11.contains(lat) && rlon11.contains(lon)) ||
+            (rlat12.contains(lat) && rlon12.contains(lon)) ||
+            (rlat13.contains(lat) && rlon13.contains(lon))
+            ) { isLand = true }
+        return isLand
+    }
+    
     @IBAction func blastOffBtn(_ sender: UIButton) {
         // clear flight dashboard
-        dashboardLabel.text = "> You have not yet launched"
+        dashboardLabel.text = "> Preparing for launch...\n"
+        var failCause : String?
+        
+        dismissKeyboard()
         
         // reset fuel -- also account for if running still
         fuelPump.invalidate()
@@ -191,39 +255,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var landSP = 0
         
         // use locLatiSlider and locLongSlider values for geography
+        if (verifyLand()) {
+            launchSP = 30
+        }
+        else {
+            failCause = "> The launchpad sunk into the ocean."
+        }
+        
+        // evaluate boost stages, engines, and fuel
+        
         
         if (launchSP < launchMD) {
-            //
+            dashboardLabel.text! += failCause!
         }
         else {
             // success dashboard message
             
             if (travelSP < travelMD) {
-                //
+                dashboardLabel.text! += failCause!
             }
             else {
                 // success dashboard message
                 
                 if (moonlandSP < moonlandMD) {
-                    //
+                    dashboardLabel.text! += failCause!
                 }
                 else {
                     // success dashboard message
                     
                     if (moonlaunchSP < moonlaunchMD) {
-                        //
+                        dashboardLabel.text! += failCause!
                     }
                     else {
                         // success dashboard message
                         
                         if (returnSP < returnMD) {
-                            //
+                            dashboardLabel.text! += failCause!
                         }
                         else {
                             // success dashboard message
                             
                             if (landSP < landMD) {
-                                //
+                                dashboardLabel.text! += failCause!
                             }
                             else {
                                 // final possible success dashboard message
@@ -237,7 +310,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         fuelGauge = 0.00
         
+        
     } // end blast off button action function
+    
+    //
+    // reset all to default state
+    // 
+    @IBAction func resetAll(_ sender: UIButton) {
+        // deselect boost stages
+       //  https://developer.apple.com/documentation/uikit/uisegmentedcontrol/1618575-selectedsegmentindex?language=objc
+        stagesSegSelector.selectedSegmentIndex = -1
+        
+        // clear text fields
+        numEnginesTxtField.text! = ""
+        numFinsTxtField.text! = ""
+        dismissKeyboard()
+        
+        // reset fuel timer
+        fuelPump.invalidate()
+        fuelPumpActive = false
+        fuelPumpBtn.setTitle("Start", for: .normal)
+        fuelGauge = 0.00
+        fuelPumpGaugeLabel.text = "00.00 units"
+        
+        // set latitude and longitude to 0, 0
+        locLongSlider.value = 0
+        locLatiSlider.value = 0
+        
+        // clear astronauts
+        selectedAstronauts.removeAll()
+        selectedAstronauts.append(Astronaut(name:"Select up to 5", intel: 0, stem: 0, flighttime: 0))
+        
+        // clear flight dashboard
+        dashboardLabel.text = "> You have not yet launched."
+    }
     
 }
 

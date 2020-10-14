@@ -15,11 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1339"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-nY-7dG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-nY-7dG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1295"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6i-g2-SzP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1131"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="5v7-eQ-pza" userLabel="banner stack view">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="234"/>
@@ -49,8 +49,15 @@ Blast to the Moon</string>
                                                 </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jFt-bn-SLg" userLabel="control panel stack view">
-                                                <rect key="frame" x="20" y="259" width="374" height="660.5"/>
+                                                <rect key="frame" x="20" y="259" width="374" height="645.5"/>
                                                 <subviews>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCe-e4-bMp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GGF-8Y-145"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket Boost Stages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-ew-yuE">
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="21"/>
                                                         <constraints>
@@ -101,52 +108,20 @@ Blast to the Moon</string>
                                                             </mask>
                                                         </variation>
                                                     </segmentedControl>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="bIC-ZS-E7W" userLabel="engine stack view">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bIC-ZS-E7W" userLabel="engine stack view">
                                                         <rect key="frame" x="0.0" y="91" width="374" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Engines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnZ-LV-chv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Y5A-Ez-RrV"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="gqY-fa-k2d"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="Y5A-Ez-RrV"/>
-                                                                        <exclude reference="gqY-fa-k2d"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <variation key="heightClass=regular-widthClass=compact">
-                                                                    <mask key="constraints">
-                                                                        <include reference="Y5A-Ez-RrV"/>
-                                                                        <include reference="gqY-fa-k2d"/>
-                                                                    </mask>
-                                                                </variation>
                                                             </label>
                                                             <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="engines" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-Cc-ItT">
-                                                                <rect key="frame" x="235" y="0.0" width="139" height="34"/>
+                                                                <rect key="frame" x="206.5" y="0.0" width="167.5" height="34"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="CWK-aw-QLd"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="uOa-XO-BwB"/>
-                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="CWK-aw-QLd"/>
-                                                                        <exclude reference="uOa-XO-BwB"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <variation key="heightClass=regular-widthClass=compact">
-                                                                    <mask key="constraints">
-                                                                        <include reference="CWK-aw-QLd"/>
-                                                                        <include reference="uOa-XO-BwB"/>
-                                                                    </mask>
-                                                                </variation>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -154,108 +129,52 @@ Blast to the Moon</string>
                                                         <rect key="frame" x="0.0" y="140" width="374" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Fins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rol-BH-WgI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="34"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="1G9-Om-YyN"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="clO-GM-GT1"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="1G9-Om-YyN"/>
-                                                                        <exclude reference="clO-GM-GT1"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <variation key="heightClass=regular-widthClass=compact">
-                                                                    <mask key="constraints">
-                                                                        <include reference="1G9-Om-YyN"/>
-                                                                        <include reference="clO-GM-GT1"/>
-                                                                    </mask>
-                                                                </variation>
                                                             </label>
-                                                            <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0z-es-DwK">
-                                                                <rect key="frame" x="235" y="0.0" width="139" height="34"/>
+                                                            <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fins" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0z-es-DwK">
+                                                                <rect key="frame" x="234.5" y="0.0" width="139.5" height="34"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="4I7-Gq-e2L"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="AX8-Y0-nEg"/>
-                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="4I7-Gq-e2L"/>
-                                                                        <exclude reference="AX8-Y0-nEg"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <variation key="heightClass=regular-widthClass=compact">
-                                                                    <mask key="constraints">
-                                                                        <include reference="4I7-Gq-e2L"/>
-                                                                        <include reference="AX8-Y0-nEg"/>
-                                                                    </mask>
-                                                                </variation>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-G2-89o" userLabel="fuel stack view">
-                                                        <rect key="frame" x="0.0" y="189" width="374" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-G2-89o" userLabel="fuel stack view">
+                                                        <rect key="frame" x="0.0" y="189" width="374" height="35"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pump Fuel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-mI-EaM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="PRb-e6-tT9"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq8-H6-3g7">
-                                                                <rect key="frame" x="132" y="0.0" width="71" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="fg7-t8-P3O"/>
-                                                                </constraints>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="00.00 units" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq8-H6-3g7">
+                                                                <rect key="frame" x="88" y="0.0" width="199" height="35"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                 <color key="textColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-7K-Ok9">
-                                                                <rect key="frame" x="245" y="0.0" width="129" height="50"/>
+                                                                <rect key="frame" x="294" y="0.0" width="80" height="35"/>
                                                                 <color key="backgroundColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dwt-r4-hkj"/>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="pOM-XJ-BX0"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="hVh-lD-PxA"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <state key="normal" title="Start">
                                                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="dwt-r4-hkj"/>
-                                                                        <exclude reference="pOM-XJ-BX0"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <variation key="heightClass=regular-widthClass=compact">
-                                                                    <mask key="constraints">
-                                                                        <include reference="dwt-r4-hkj"/>
-                                                                        <include reference="pOM-XJ-BX0"/>
-                                                                    </mask>
-                                                                </variation>
                                                                 <connections>
                                                                     <action selector="pumpFuel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7DM-Ms-DhB"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="rfz-mI-EaM" firstAttribute="leading" secondItem="ipJ-G2-89o" secondAttribute="leadingMargin" id="D18-vR-Xqd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ahd-7K-Ok9" secondAttribute="trailing" id="Rhu-kI-0Jm"/>
-                                                            <constraint firstItem="fq8-H6-3g7" firstAttribute="centerY" secondItem="ipJ-G2-89o" secondAttribute="centerY" id="i6v-Kg-bda"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Site Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-Dh-AVd">
-                                                        <rect key="frame" x="0.0" y="254" width="160" height="21"/>
+                                                        <rect key="frame" x="0.0" y="239" width="160" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="XHZ-oE-Uql"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="lBw-su-MTK"/>
@@ -276,11 +195,11 @@ Blast to the Moon</string>
                                                             </mask>
                                                         </variation>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="SRi-yS-Fzg" userLabel="latt stack view">
-                                                        <rect key="frame" x="0.0" y="290" width="374" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SRi-yS-Fzg" userLabel="latt stack view">
+                                                        <rect key="frame" x="0.0" y="275" width="374" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29j-10-BpP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="137" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="REG-au-mhb"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="ZvY-vN-txb"/>
@@ -302,7 +221,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-90°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-0B-3Gy">
-                                                                <rect key="frame" x="115" y="0.0" width="36" height="30"/>
+                                                                <rect key="frame" x="147" y="0.0" width="36" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="CKN-Ul-TtO"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="IJe-Ql-b4j"/>
@@ -324,7 +243,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-90" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="waF-UO-I8x">
-                                                                <rect key="frame" x="175" y="0.0" width="146" height="31"/>
+                                                                <rect key="frame" x="191" y="0.0" width="146" height="31"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="142" id="h2c-3y-7yl"/>
@@ -364,8 +283,8 @@ Blast to the Moon</string>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-XP-YL2" userLabel="long stack view">
-                                                        <rect key="frame" x="0.0" y="335" width="374" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-XP-YL2" userLabel="long stack view">
+                                                        <rect key="frame" x="0.0" y="320" width="374" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-Y0-Xzz">
                                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
@@ -390,7 +309,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="-180°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdW-mI-dlW">
-                                                                <rect key="frame" x="90" y="0.0" width="70" height="30"/>
+                                                                <rect key="frame" x="80" y="0.0" width="100" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Yy4-HE-rgn"/>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="a1Y-2c-D0h"/>
@@ -412,7 +331,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="YmY-1Q-CxB">
-                                                                <rect key="frame" x="176" y="0.0" width="146" height="31"/>
+                                                                <rect key="frame" x="186" y="0.0" width="146" height="31"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="142" id="fbQ-wt-nYk"/>
@@ -453,13 +372,13 @@ Blast to the Moon</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hire Crew Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hS-mM-nIJ">
-                                                        <rect key="frame" x="0.0" y="380" width="152" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="365" width="152" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0RH-oj-RKL" userLabel="table stack view">
-                                                        <rect key="frame" x="0.0" y="415.5" width="349" height="245"/>
+                                                        <rect key="frame" x="0.0" y="400.5" width="349" height="245"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKp-Uu-fzn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="349" height="128"/>
@@ -516,15 +435,23 @@ Blast to the Moon</string>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="PdO-XP-YL2" secondAttribute="trailing" id="1Gh-eg-dcF"/>
                                                     <constraint firstItem="0RH-oj-RKL" firstAttribute="leading" secondItem="SRi-yS-Fzg" secondAttribute="leading" id="AHd-h3-733"/>
+                                                    <constraint firstItem="jCe-e4-bMp" firstAttribute="top" secondItem="jFt-bn-SLg" secondAttribute="topMargin" id="AI6-mI-6ej"/>
                                                     <constraint firstItem="PdO-XP-YL2" firstAttribute="leading" secondItem="jFt-bn-SLg" secondAttribute="leading" id="EUR-JQ-Pbw"/>
                                                     <constraint firstItem="qZ9-T7-XyB" firstAttribute="centerX" secondItem="jFt-bn-SLg" secondAttribute="centerX" id="G7s-do-L4R"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bIC-ZS-E7W" secondAttribute="trailing" id="JuU-tg-OeA"/>
+                                                    <constraint firstItem="bIC-ZS-E7W" firstAttribute="leading" secondItem="jFt-bn-SLg" secondAttribute="leading" id="a0H-AG-HWL"/>
                                                     <constraint firstItem="SRi-yS-Fzg" firstAttribute="leading" secondItem="jFt-bn-SLg" secondAttribute="leading" id="bKV-sp-1fh"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="jCe-e4-bMp" secondAttribute="trailing" id="bUu-KZ-00M"/>
+                                                    <constraint firstItem="mLF-ew-yuE" firstAttribute="top" secondItem="jCe-e4-bMp" secondAttribute="bottom" id="c7h-V5-sc0"/>
+                                                    <constraint firstItem="jCe-e4-bMp" firstAttribute="leading" secondItem="jFt-bn-SLg" secondAttribute="leadingMargin" id="fM4-vZ-YDC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wwz-dY-pPl" secondAttribute="trailing" id="hAu-ui-N9U"/>
+                                                    <constraint firstItem="Wwz-dY-pPl" firstAttribute="leading" secondItem="jFt-bn-SLg" secondAttribute="leading" id="hLR-iZ-Qj0"/>
                                                     <constraint firstAttribute="trailing" secondItem="SRi-yS-Fzg" secondAttribute="trailing" id="kWO-5U-EJr"/>
                                                     <constraint firstAttribute="trailing" secondItem="ipJ-G2-89o" secondAttribute="trailing" id="tfn-kT-AuZ"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-As-IsW" userLabel="blast off stack view">
-                                                <rect key="frame" x="123.5" y="939.5" width="167" height="93"/>
+                                                <rect key="frame" x="123.5" y="924.5" width="167" height="93"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czR-sp-Ezb">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
@@ -566,13 +493,16 @@ Blast to the Moon</string>
                                                                 <state key="normal" title="Reset">
                                                                     <color key="titleColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="resetAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q6v-vt-Il3"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-Fy-5r1" userLabel="dashboard stack view">
-                                                <rect key="frame" x="32" y="1042.5" width="350" height="93.5"/>
+                                                <rect key="frame" x="32" y="1027.5" width="350" height="93.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="___________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S23-ys-8PI">
                                                         <rect key="frame" x="20" y="0.0" width="310.5" height="20.5"/>
