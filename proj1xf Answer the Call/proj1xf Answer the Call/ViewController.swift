@@ -154,10 +154,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // https://www.youtube.com/watch?v=FRQ9-HKkSow
     //
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (selectedAstronauts[0].intel == 0) {
+        if (selectedAstronauts.count > 0 && selectedAstronauts[0].intel == 0) {
             selectedAstronauts.removeFirst(1)
         }
-        selectedAstronauts.append(astronauts[indexPath.row])
+        // https://stackoverflow.com/questions/40518705/how-can-i-check-if-a-structure-is-in-the-array-of-structures-based-on-its-field
+        if (selectedAstronauts.contains(where: {$0.name == astronauts[indexPath.row].name})) {
+            selectedAstronauts.removeAll(where: {$0.name == astronauts[indexPath.row].name} )
+        }
+        else if (selectedAstronauts.count < 5) {
+            selectedAstronauts.append(astronauts[indexPath.row])
+        }
+        if (selectedAstronauts.count == 0) {
+            selectedAstrLabel.text! = "Select up to 5"
+        }
+        else {
+            selectedAstrLabel.text! = ""
+        }
+        for astr in selectedAstronauts
+        {
+            selectedAstrLabel.text! += astr.name + " (" + String(astr.flighttime) + " flight hours)\n"
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return astronauts.count;
@@ -173,7 +189,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // blast off button actions
     //
     
-    // https://www.hackingwithswift.com/articles/90/how-to-check-whether-a-value-is-inside-a-range
+    // https://developer.apple.com/documentation/swift/range
     func verifyLand() -> Bool {
         var isLand = false
         
@@ -340,6 +356,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // clear astronauts
         selectedAstronauts.removeAll()
         selectedAstronauts.append(Astronaut(name:"Select up to 5", intel: 0, stem: 0, flighttime: 0))
+        selectedAstrLabel.text! = "Select up to 5"
         
         // clear flight dashboard
         dashboardLabel.text = "> You have not yet launched."
