@@ -54,26 +54,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     // data based on https://www.theguardian.com/news/datablog/2011/jul/08/us-astronauts-listed-nasa
     let astronauts: [Astronaut] = [
-        Astronaut(name: "Clayton Anderson",   intel: 22, stem: Int.random(in: 1...10), flighttime: 4046),
-        Astronaut(name: "Tracy Caldwell",     intel: 22, stem: Int.random(in: 1...10), flighttime: 4529),
-        Astronaut(name: "Kalpana Chawla",     intel: 25, stem: Int.random(in: 1...10), flighttime:  758),
-        Astronaut(name: "Timothy Creamer",    intel: 22, stem: Int.random(in: 1...10), flighttime: 3912),
-        Astronaut(name: "Bonnie Dunbar",      intel: 40, stem: Int.random(in: 1...10), flighttime: 1208),
-        Astronaut(name: "Michael Fincke",     intel: 24, stem: Int.random(in: 1...10), flighttime: 9159),
-        Astronaut(name: "Michael Foale",      intel: 33, stem: Int.random(in: 1...10), flighttime: 8976),
-        Astronaut(name: "Susan Helms",        intel: 30, stem: Int.random(in: 1...10), flighttime: 5064),
-        Astronaut(name: "Marsha Ivins",       intel: 36, stem: Int.random(in: 1...10), flighttime: 1318),
-        Astronaut(name: "Tamara Jernigan",    intel: 35, stem: Int.random(in: 1...10), flighttime: 1512),
-        Astronaut(name: "Timothy Kopra",      intel: 20, stem: Int.random(in: 1...10), flighttime: 1464),
-        Astronaut(name: "Richard Linnehan",   intel: 28, stem: Int.random(in: 1...10), flighttime: 1392),
-        Astronaut(name: "Shannon Lucid",      intel: 42, stem: Int.random(in: 1...10), flighttime: 5354),
-        Astronaut(name: "Donald Pettit",      intel: 24, stem: Int.random(in: 1...10), flighttime: 4224),
-        Astronaut(name: "Nicole Stott",       intel: 20, stem: Int.random(in: 1...10), flighttime: 2491),
-        Astronaut(name: "Frederick Sturckow", intel: 25, stem: Int.random(in: 1...10), flighttime: 1200),
-        Astronaut(name: "Douglas Wheelock",   intel: 22, stem: Int.random(in: 1...10), flighttime: 4272),
-        Astronaut(name: "Terrence Wilcutt",   intel: 30, stem: Int.random(in: 1...10), flighttime: 1007),
-        Astronaut(name: "Sunita Williams",    intel: 22, stem: Int.random(in: 1...10), flighttime: 4680),
-        Astronaut(name: "Stephanie Wilson",   intel: 24, stem: Int.random(in: 1...10), flighttime: 1008)
+        Astronaut(name: "Clayton Anderson",   intel: 22, stem: Int.random(in: 1...9), flighttime: 4046),
+        Astronaut(name: "Tracy Caldwell",     intel: 22, stem: Int.random(in: 1...9), flighttime: 4529),
+        Astronaut(name: "Kalpana Chawla",     intel: 25, stem: Int.random(in: 1...9), flighttime:  758),
+        Astronaut(name: "Timothy Creamer",    intel: 22, stem: Int.random(in: 1...9), flighttime: 3912),
+        Astronaut(name: "Bonnie Dunbar",      intel: 40, stem: Int.random(in: 1...9), flighttime: 1208),
+        Astronaut(name: "Michael Fincke",     intel: 24, stem: Int.random(in: 1...9), flighttime: 9159),
+        Astronaut(name: "Michael Foale",      intel: 33, stem: Int.random(in: 1...9), flighttime: 8976),
+        Astronaut(name: "Susan Helms",        intel: 30, stem: Int.random(in: 1...9), flighttime: 5064),
+        Astronaut(name: "Marsha Ivins",       intel: 36, stem: Int.random(in: 1...9), flighttime: 1318),
+        Astronaut(name: "Tamara Jernigan",    intel: 35, stem: Int.random(in: 1...9), flighttime: 1512),
+        Astronaut(name: "Timothy Kopra",      intel: 20, stem: Int.random(in: 1...9), flighttime: 1464),
+        Astronaut(name: "Richard Linnehan",   intel: 28, stem: Int.random(in: 1...9), flighttime: 1392),
+        Astronaut(name: "Shannon Lucid",      intel: 42, stem: Int.random(in: 1...9), flighttime: 5354),
+        Astronaut(name: "Donald Pettit",      intel: 24, stem: Int.random(in: 1...9), flighttime: 4224),
+        Astronaut(name: "Nicole Stott",       intel: 20, stem: Int.random(in: 1...9), flighttime: 2491),
+        Astronaut(name: "Frederick Sturckow", intel: 25, stem: Int.random(in: 1...9), flighttime: 1200),
+        Astronaut(name: "Douglas Wheelock",   intel: 22, stem: Int.random(in: 1...9), flighttime: 4272),
+        Astronaut(name: "Terrence Wilcutt",   intel: 30, stem: Int.random(in: 1...9), flighttime: 1007),
+        Astronaut(name: "Sunita Williams",    intel: 22, stem: Int.random(in: 1...9), flighttime: 4680),
+        Astronaut(name: "Stephanie Wilson",   intel: 24, stem: Int.random(in: 1...9), flighttime: 1008)
     ]
     var selectedAstronauts : [Astronaut] = [Astronaut(name: "Select up to 5", intel: 0, stem: 0, flighttime: 0)] // declare and initialize selectedAstronauts array
     
@@ -245,7 +245,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func blastOffBtn(_ sender: UIButton) {
         // clear flight dashboard
         dashboardLabel.text = "> Preparing for launch...\n"
-        var failCause : String?
+        var failCause : String = "> An unknown malfunction caused the rocket to explode"
         
         dismissKeyboard()
         
@@ -257,65 +257,258 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         // MD = mission difficulty, SP = success probability
-        let launchMD = Int.random(in: 10...95)
-        var launchSP = 0
-        let travelMD = Int.random(in: 10...95)
-        var travelSP = 0
-        let moonlandMD = Int.random(in: 10...95)
-        var moonlandSP = 0
-        let moonlaunchMD = Int.random(in: 10...95)
-        var moonlaunchSP = 0
-        let returnMD = Int.random(in: 10...95)
-        var returnSP = 0
-        let landMD = Int.random(in: 10...95)
-        var landSP = 0
+        let launchMD = Int.random(in: 10...75)
+        var launchSP = 1
+        let travelMD = Int.random(in: 10...75)
+        var travelSP = 1
+        let moonlandMD = Int.random(in: 10...75)
+        var moonlandSP = 1
+        let moonlaunchMD = Int.random(in: 10...75)
+        var moonlaunchSP = 1
+        let returnMD = Int.random(in: 10...75)
+        var returnSP = 1
+        let landMD = Int.random(in: 10...75)
+        var landSP = 1
         
-        // use locLatiSlider and locLongSlider values for geography
-        if (verifyLand()) {
-            launchSP = 30
+        // evaluate fins for stability
+        var numFins = 0
+        if (numFinsTxtField.text! != "") {
+            numFins = Int(numFinsTxtField.text!)!
+        }
+        if (numFins == 0)
+        {
+            travelSP += 3
+            returnSP += 3
+            failCause = "> The rocket's trajectory could not be controlled and the astronauts were lost to space."
         }
         else {
-            failCause = "> The launchpad sunk into the ocean."
+            if numFins < 3 {
+                travelSP = +10
+                returnSP = +10
+            }
+            else if numFins < 5 {
+                travelSP = +30
+                returnSP = +35
+            }
+            else if numFins < 99 {
+                travelSP = +17
+                returnSP = +14
+            }
+            else {
+                failCause = "> The rocket had too many external parts and could not be controlled."
+            }
+            
         }
         
         // evaluate boost stages, engines, and fuel
+        var numEngines = 0
+        if (numEnginesTxtField.text! != "") {
+            numEngines = Int(numEnginesTxtField.text!)!
+        }
+        let stages = Int(stagesSegSelector.titleForSegment(at: stagesSegSelector.selectedSegmentIndex)!)!
+        if (numEngines == 0 || stages == 0) {
+            failCause = "> The rocket cannot launch without an engine or body."
+        }
+        else {
+            if fuelGauge < 200000 {
+                failCause = "> The rocket could not produce enough thrust to leave the launchpad."
+            }
+            else if fuelGauge < 600000 && numEngines > 1 {
+                failCause = "> The stage 1 booster had insufficient fuel."
+            }
+            if (stages > 1) {
+                moonlandSP += 35
+                moonlaunchSP += 20
+                landSP += 40
+            }
+            if numEngines > 20 {
+                if fuelGauge < 2800000 {
+                    failCause = "> There was insufficient fuel for all the engines."
+                }
+                else if stages < 3 {
+                    failCause = "> The engines were too heavy."
+                }
+                else {
+                    launchSP += 12
+                    moonlaunchSP += 16
+                    landSP += 10
+                }
+            }
+            else if numEngines > 13 {
+                if fuelGauge < 1700000 {
+                    failCause = "> There was insufficient fuel for all the engines."
+                }
+                else {
+                    launchSP += 24
+                    moonlaunchSP += 25
+                    landSP += 20
+                }
+            }
+            else if numEngines > 9 {
+                if fuelGauge < 1100000 {
+                    failCause = "> The engines consumed all the fuel too quickly."
+                }
+                else {
+                    launchSP += 24
+                    moonlaunchSP += 20
+                    landSP += 10
+                }
+            }
+            else if numEngines > 3 {
+                if fuelGauge < 500000 {
+                    failCause = "> The engines were not supplied with enough fuel."
+                }
+                else if stages > 2 {
+                    failCause = "> Not enough engines were allocated to each stage."
+                }
+                else {
+                    launchSP += 15
+                    moonlaunchSP += 10
+                    landSP += 4
+                }
+            }
+            else {
+                if stages > 1 {
+                    failCause = "> Not enough engines were allocated to each stage."
+                }
+                launchSP += 6
+            }
+        }
         
         
+        // use locLatiSlider and locLongSlider values for geography
+        if (verifyLand()) {
+            launchSP += 20
+        }
+        else {
+            launchSP = 0
+            failCause = "> The launchpad sunk into the ocean."
+        }
+        
+        // apply astronaut multipliers
+        var multiplier : Float = 1.0
+        var mtotal : Float = 0.0
+        var itotal : Float = 0.0
+        var totalft : Int = 0
+        for astr in selectedAstronauts {
+            mtotal += Float(astr.stem) / 10.0
+            itotal += Float(astr.intel)
+            totalft += astr.flighttime
+        }
+        mtotal = mtotal / Float(selectedAstronauts.count)
+        multiplier += mtotal
+        moonlandSP = Int(Float(moonlandSP) * multiplier)
+        landSP = Int(Float(landSP) * multiplier)
+        
+        let bonus = itotal / Float(selectedAstronauts.count)
+        if bonus > 37.0 {
+            moonlandSP += 10
+            moonlaunchSP += 15
+            returnSP += 10
+            landSP += 5
+        }
+        else if bonus > 32.0 {
+            moonlandSP += 7
+            moonlaunchSP += 10
+            returnSP += 5
+            landSP += 2
+        }
+        else if bonus > 28.0 {
+            moonlandSP += 4
+            moonlaunchSP += 5
+            returnSP += 2
+        }
+        else if bonus > 22.0 {
+            moonlandSP += 2
+            moonlaunchSP += 2
+        }
+        
+        if totalft > 25000 {
+            travelSP += 40
+            returnSP += 25
+            multiplier = 1.85
+        }
+        else if totalft > 19000 {
+            travelSP += 30
+            returnSP += 17
+            multiplier = 1.7
+        }
+        else if totalft > 16000 {
+            travelSP += 20
+            returnSP += 13
+            multiplier = 1.5
+        }
+        else if totalft > 13000 {
+            travelSP += 15
+            returnSP += 10
+            multiplier = 1.33
+        }
+        else if totalft > 8000 {
+            travelSP += 10
+            returnSP += 6
+            multiplier = 1.17
+        }
+        else if totalft > 4000 {
+            travelSP += 6
+            returnSP += 2
+            multiplier = 1.08
+        }
+        else if totalft > 1000 {
+            travelSP += 4
+            returnSP += 1
+            multiplier = 1.04
+        }
+        launchSP = Int(Float(launchSP) * multiplier)
+        travelSP = Int(Float(travelSP) * multiplier)
+        moonlaunchSP = Int(Float(moonlaunchSP) * multiplier)
+        returnSP = Int(Float(returnSP) * multiplier)
+        landSP = Int(Float(landSP) * multiplier)
+        
+        // enter mission check cycle
         if (launchSP < launchMD) {
-            dashboardLabel.text! += failCause!
+            dashboardLabel.text! += failCause
         }
         else {
             // success dashboard message
+            dashboardLabel.text! += "> The rocket thundered into the atmosphere and is en route to the moon.\n"
             
             if (travelSP < travelMD) {
-                dashboardLabel.text! += failCause!
+                dashboardLabel.text! += failCause
             }
             else {
                 // success dashboard message
+                dashboardLabel.text! += "> A crackly transmission from the rocket reports that it has reached the moon. \n"
                 
                 if (moonlandSP < moonlandMD) {
-                    dashboardLabel.text! += failCause!
+                    dashboardLabel.text! += failCause
                 }
                 else {
                     // success dashboard message
+                    dashboardLabel.text! += "> The lunar module successfully touched down.\n"
                     
                     if (moonlaunchSP < moonlaunchMD) {
-                        dashboardLabel.text! += failCause!
+                        dashboardLabel.text! += failCause
                     }
                     else {
                         // success dashboard message
+                        dashboardLabel.text! += "> The lunar module successfully docked back onto the command module. The rocket is on its way back to earth.\n"
                         
                         if (returnSP < returnMD) {
-                            dashboardLabel.text! += failCause!
+                            dashboardLabel.text! += failCause
                         }
                         else {
                             // success dashboard message
+                            dashboardLabel.text! += "> The rocket is preparing for reentry into Earth's atmosphere.\n"
                             
                             if (landSP < landMD) {
-                                dashboardLabel.text! += failCause!
+                                dashboardLabel.text! += failCause
                             }
                             else {
                                 // final possible success dashboard message
+                                dashboardLabel.text! += "> Mission success! The command module and its lunar samples were collected."
+                                if selectedAstronauts.count > 0 && selectedAstronauts[0].intel > 0 {
+                                    dashboardLabel.text! += " The crew is celebrating in quarantine."
+                                }
                                 
                             } // land
                         } // return

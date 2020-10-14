@@ -199,7 +199,7 @@ Blast to the Moon</string>
                                                         <rect key="frame" x="0.0" y="265" width="286" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29j-10-BpP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="REG-au-mhb"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="ZvY-vN-txb"/>
@@ -221,7 +221,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-90°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-0B-3Gy">
-                                                                <rect key="frame" x="32" y="0.0" width="36" height="30"/>
+                                                                <rect key="frame" x="10" y="0.0" width="0.0" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="CKN-Ul-TtO"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="IJe-Ql-b4j"/>
@@ -243,11 +243,12 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-90" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="waF-UO-I8x">
-                                                                <rect key="frame" x="76" y="0.0" width="173.5" height="31"/>
+                                                                <rect key="frame" x="18" y="0.0" width="245.5" height="31"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="142" id="h2c-3y-7yl"/>
                                                                 </constraints>
+                                                                <color key="thumbTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
                                                                         <exclude reference="h2c-3y-7yl"/>
@@ -260,7 +261,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-U3-nen">
-                                                                <rect key="frame" x="257.5" y="0.0" width="28.5" height="30"/>
+                                                                <rect key="frame" x="271.5" y="0.0" width="14.5" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="Pnc-Gt-nCI"/>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="vbC-cJ-4uv"/>
@@ -287,7 +288,7 @@ Blast to the Moon</string>
                                                         <rect key="frame" x="0.0" y="310" width="286" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-Y0-Xzz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="9Xy-8F-Olu"/>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="BRO-JM-0fz"/>
@@ -309,7 +310,7 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="-180°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdW-mI-dlW">
-                                                                <rect key="frame" x="60" y="0.0" width="43.5" height="30"/>
+                                                                <rect key="frame" x="8" y="0.0" width="23.5" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Yy4-HE-rgn"/>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="a1Y-2c-D0h"/>
@@ -331,11 +332,12 @@ Blast to the Moon</string>
                                                                 </variation>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="YmY-1Q-CxB">
-                                                                <rect key="frame" x="109.5" y="0.0" width="134.5" height="31"/>
+                                                                <rect key="frame" x="37.5" y="0.0" width="206.5" height="31"/>
                                                                 <color key="tintColor" red="0.14901960780000001" green="0.1333333333" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="142" id="fbQ-wt-nYk"/>
                                                                 </constraints>
+                                                                <color key="thumbTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
                                                                         <exclude reference="fbQ-wt-nYk"/>
