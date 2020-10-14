@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="title_banner" translatesAutoresizingMaskIntoConstraints="NO" id="Nk9-8Q-Q35">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ludariz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Nk9-8Q-Q35">
                                 <rect key="frame" x="50" y="62.5" width="314" height="771"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nk9-8Q-Q35" secondAttribute="height" multiplier="145:356" id="ACg-Y3-WpY"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="title_banner" width="4865" height="2133.5"/>
+        <image name="ludariz_logo" width="609" height="1385"/>
     </resources>
 </document>
