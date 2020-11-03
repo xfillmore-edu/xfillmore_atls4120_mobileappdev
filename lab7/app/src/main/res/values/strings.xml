@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lab7</string>
+    <string name="buttonText">Celebrate</string>
+    <string name="editHoliday">Special Occasion</string>
+</resources>
