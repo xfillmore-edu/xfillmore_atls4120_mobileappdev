@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pizza Bar</string>
+    <string name="title_pizzabar">Pizza Bar</string>
+    <string name="radio_nosauce">No Sauce</string>
+    <string name="radio_redsauce">Red Sauce</string>
+    <string name="radio_whitesauce">White Sauce</string>
+    <string name="button_submit">Fire Up the Oven</string>
+    <string name="radio_thincrust">Thin Crust</string>
+    <string name="radio_thickcrust">Thick Crust</string>
+</resources>
