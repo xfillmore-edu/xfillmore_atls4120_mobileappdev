@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/txtview_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/app_header"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtview_heading">
+
+            <RadioButton
+                android:id="@+id/radiobtn_meat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="loadMeatOps"
+                android:text="@string/radio_meat" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_veggie_toplevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="loadVeggieOps"
+                android:text="@string/radio_veggie" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radiogroup_meat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup_protein"
+            tools:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/radiobtn_chicken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_chicken" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_steak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_steak" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_barbacoa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_barbacoa" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_carnitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_carnitas" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radiogroup_veggie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup_protein"
+            tools:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/radiobtn_sofritas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_sofritas" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_veggie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_veggie" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinner_rice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="24dp"
+            android:entries="@array/spinnerops_rice"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_beans"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup_protein" />
+
+
+        <Spinner
+            android:id="@+id/spinner_beans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:entries="@array/spinnerops_beans"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spinner_rice"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup_protein" />
+
+        <TextView
+            android:id="@+id/txtview_summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="24dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="buildBurrito"
+            android:text="@string/button_submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch_dblwrap" />
+
+        <CheckBox
+            android:id="@+id/chkbox_guacamole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/checkbox_guacamole"
+            app:layout_constraintEnd_toStartOf="@+id/chkbox_sourcream"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_rice" />
+
+        <CheckBox
+            android:id="@+id/chkbox_sourcream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/checkbox_sourcream"
+            app:layout_constraintEnd_toStartOf="@+id/chkbox_cheese"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chkbox_guacamole"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_beans" />
+
+        <CheckBox
+            android:id="@+id/chkbox_cheese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/checkbox_cheese"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chkbox_sourcream"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_beans" />
+
+        <CheckBox
+            android:id="@+id/chkbox_rccsalsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_rccsalsa"
+            app:layout_constraintEnd_toStartOf="@+id/chkbox_tgcsalsa"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_guacamole" />
+
+        <CheckBox
+            android:id="@+id/chkbox_tgcsalsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/checkbox_tgcsalsa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chkbox_rccsalsa"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_cheese" />
+
+        <CheckBox
+            android:id="@+id/chkbox_trcsalsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_trcsalsa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_tgcsalsa" />
+
+        <CheckBox
+            android:id="@+id/chkbox_fajitaveggies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_fajitaveg"
+            app:layout_constraintEnd_toStartOf="@+id/chkbox_queso"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_trcsalsa" />
+
+        <CheckBox
+            android:id="@+id/chkbox_queso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_queso"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chkbox_fajitaveggies"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_trcsalsa" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_dblwrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/switch_dblwrap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkbox_fajitaveggies" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

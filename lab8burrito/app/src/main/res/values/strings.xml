@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">lab8 burrito</string>
+    <string name="app_header">Build a Chipotle Burrito</string>
+    <string name="radio_meat">meat</string>
+    <string name="radio_veggie">veggie</string>
+    <string name="radio_carne">carne asada</string>
+    <string name="radio_chicken">chicken</string>
+    <string name="radio_steak">steak</string>
+    <string name="radio_barbacoa">barbacoa</string>
+    <string name="radio_carnitas">carnitas</string>
+    <string name="radio_sofritas">sofritas</string>
+    <string name="button_submit">Order this Burrito</string>
+    <string name="checkbox_guacamole">guacamole</string>
+    <string name="checkbox_sourcream">sour cream</string>
+    <string name="checkbox_cheese">cheese</string>
+    <string name="checkbox_fajitaveg">fajita veggies</string>
+    <string name="checkbox_rccsalsa">roasted chili-corn salsa</string>
+    <string name="checkbox_tgcsalsa">tomatillo-green chili salsa</string>
+    <string name="checkbox_trcsalsa">tomatillo-red chili salsa</string>
+    <string name="checkbox_queso">queso blanco</string>
+    <string name="switch_dblwrap">double wrapped</string>
+    <string-array name="spinnerops_rice">
+        <item>no rice</item>
+        <item>white rice</item>
+        <item>brown rice</item>
+    </string-array>
+    <string-array name="spinnerops_beans">
+        <item>no beans</item>
+        <item>black beans</item>
+        <item>pinto beans</item>
+    </string-array>
+</resources>

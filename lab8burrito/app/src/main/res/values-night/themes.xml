@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Lab8Burrito" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FC8686</item>
+        <item name="colorPrimaryVariant">#AF1111</item>
+        <item name="colorOnPrimary">#632222</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#D3D3D3</item>
+        <item name="colorSecondaryVariant">#737373</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
