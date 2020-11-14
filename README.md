@@ -24,3 +24,4 @@ Demos:
 * (Xcode) UIKit Playground -- switch, slider, multiple images
 * (Xcode) demo scroll, txt field -- text fields, steppers, string formatter
 * (Xcode) AnsCall_concepts -- table view, random number generation, timer
+* (Android Studio) Pizza Bar -- scroll view, spinner, radio buttons, checkboxes
