@@ -2,9 +2,13 @@
 ATLS 4120 Mobile Application Development
 
 Lab 1: (Xcode) Frost -- images, labels, buttons\
-Lab 2: (WordPress) Principles of Design\
+Lab 2: (WordPress) Principles of Design (Apple)\
 Lab 3: (Xcode) DoF -- slider, switch, segmented control, label manipulation, class adaptivity\
-Lab 4: (Xcode) UIKit -- alerts, steppers, text fields
+Lab 4: (Xcode) UIKit -- alerts, steppers, text fields\
+[Lab 5]: (Xcode) Multiple View Controllers
+Lab 6: (WordPress) Princpiles of Design (Google)\
+Lab 7 (Android Studio) -- text view, images, buttons, constraints\
+Lab 8 (Android Studio) -- switch, radio buttons, checkboxes, spinner, saving state, scroll view
 
 Project 1: (Xcode) Answer the Call\
     -- segmented control\
