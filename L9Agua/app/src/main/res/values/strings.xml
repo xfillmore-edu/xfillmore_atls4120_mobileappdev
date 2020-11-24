@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">L9 Agua</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="text_consumed">You have consumed</string>
+    <string name="text_ml">mL of water today.</string>
+    <string name="txt_qtyconsumed">0</string>
+    <string name="txt_percentage">0%</string>
+    <string name="txt_outof">/ 2,500</string>
+    <string name="btn_drank">I drank more</string>
+    <string name="radio_ml">milliliters</string>
+    <string name="radio_oz">ounces</string>
+    <string name="drankmore">I drank an additional ...</string>
+    <string name="btn_submitupdate">glug, glug</string>
+    <string name="editable_wtramt">water amount</string>
+</resources>
