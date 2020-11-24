@@ -1,5 +1,6 @@
 package com.example.l9agua
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -11,7 +12,7 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var consumed = 0
+    private var mWaterBottle = WaterBottle()
     private val REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         btn_addwater.setOnClickListener {
             val intent = Intent(this, SubActivity::class.java)
-            intent.putExtra("currentQty", consumed)
+            intent.putExtra("currentQty", mWaterBottle.qty)
             startActivityForResult(intent, REQUEST_CODE)
         }
     }
 
     private fun launchWebsite () {
-        var intent = Intent()
+        val intent = Intent()
         intent.action = Intent.ACTION_VIEW
         intent.data = Uri.parse(R.string.external_link.toString())
 
@@ -45,8 +46,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDisplays () {
-        text_qtyconsumed.text = consumed.toString()
-        txt_percentage.text = (consumed/2500).toString() + "%"
+        text_qtyconsumed.text = mWaterBottle.qty.toString()
+        txt_percentage.text = (mWaterBottle.qty/2500).toString() + "%"
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -59,8 +60,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE) && (resultCode == Activity.RESULT_OK)) {
-            consumed = data?.let(data.getIntExtra("newQty"))
+        if ((requestCode == REQUEST_CODE) && (resultCode == Activity.RESULT_OK)) {
+            if (data != null) {
+                mWaterBottle.qty = data.getIntExtra("newQty", mWaterBottle.qty)
+            }
         }
     }
 }
