@@ -1,0 +1,178 @@
+<resources>
+    <string name="app_name">BrewMC</string>
+    <string name="header_brewmc">BrewMC</string>
+    <string name="contentDescription_mcpotion">BrewMC grass block potion logo</string>
+    <string name="contentDescription_barrier">no ingredient</string>
+
+    <string-array name="ingredients">
+        <item>blaze powder</item>
+        <item>fermented spider eye</item>
+        <item>ghast tear</item>
+        <item>glistering melon slice</item>
+        <item>golden carrot</item>
+        <item>magma cream</item>
+        <item>phantom membrane</item>
+        <item>pufferfish</item>
+        <item>rabbit foot</item>
+        <item>spider eye</item>
+        <item>sugar</item>
+        <item>turtle shell</item>
+    </string-array>
+    <string-array name="dusts">
+        <item>redstone dust</item>
+        <item>glowstone dust</item>
+        <!--<item>gunpowder</item>-->
+    </string-array>
+    <string name="netherwart">nether wart</string>
+    <string name="contentDescription_ing_nw">nether wart ingredient</string>
+    <string name="contentDescription_ing_ferspeye">fermented spider eye ingredient</string>
+    <string name="contentDescription_ing_redstone">redstone ingredient</string>
+    <string name="contentDescription_ing_gsdust">glowstone dust ingredient</string>
+
+    <string-array name="potions">
+        <item>Water Bottle</item>
+        <item>Awkward Potion</item>
+        <item>Thick Potion</item>
+        <item>Mundane Potion</item>
+
+        <item>Potion of Fire Resistance</item>
+        <item>Potion of Fire Resistance +</item>
+
+        <item>Potion of Harming</item>
+        <item>Potion of Harming II</item>
+
+        <item>Potion of Healing</item>
+        <item>Potion of Healing II</item>
+
+        <item>Potion of Invisibility</item>
+        <item>Potion of Invisibility +</item>
+
+        <item>Potion of Leaping</item>
+        <item>Potion of Leaping +</item>
+        <item>Potion of Leaping II</item>
+
+        <item>Potion of Night Vision</item>
+        <item>Potion of Night Vision +</item>
+
+        <item>Potion of Poison</item>
+        <item>Potion of Poison +</item>
+        <item>Potion of Poison II</item>
+
+        <item>Potion of Regeneration</item>
+        <item>Potion of Regeneration +</item>
+        <item>Potion of Regeneration II</item>
+
+        <item>Potion of Slow Falling</item>
+        <item>Potion of Slow Falling +</item>
+
+        <item>Potion of Slowness</item>
+        <item>Potion of Slowness +</item>
+        <item>Potion of Slowness IV</item>
+
+        <item>Potion of Strength</item>
+        <item>Potion of Strength +</item>
+        <item>Potion of Strength II</item>
+
+        <item>Potion of Swiftness</item>
+        <item>Potion of Swiftness +</item>
+        <item>Potion of Swiftness II</item>
+
+        <item>Potion of the Turtle Master</item>
+        <item>Potion of the Turtle Master +</item>
+        <item>Potion of the Turtle Master II</item>
+
+        <item>Potion of Water Breathing</item>
+        <item>Potion of Water Breathing +</item>
+
+        <item>Potion of Weakness</item>
+        <item>Potion of Weakness +</item>
+    </string-array>
+
+    <string-array name="effects">
+        <item>No Effect</item>
+        <item>No Effect</item>
+        <item>No Effect</item>
+        <item>No Effect</item>
+        <item>Fire Resistance (3:00)</item>
+        <item>Fire Resistance (8:00)</item>
+        <item>Instant Damage</item>
+        <item>Instant Damage</item>
+        <item>Instant Health</item>
+        <item>Instant Health</item>
+        <item>Invisibility (3:00)</item>
+        <item>Invisibility (8:00)</item>
+        <item>Jump Boost (3:00)</item>
+        <item>Jump Boost (8:00)</item>
+        <item>Jump Boost (1:30)</item>
+        <item>Night Vision (3:00)</item>
+        <item>Night Vision (8:00)</item>
+        <item>Poison (0:45)</item>
+        <item>Poison (1:30)</item>
+        <item>Poison (0:22)</item>
+        <item>Regeneration (0:45)</item>
+        <item>Regeneration (1:30)</item>
+        <item>Regeneration (0:22)</item>
+        <item>Slow Falling (1:30)</item>
+        <item>Slow Falling (4:00)</item>
+        <item>Slowness (1:30)</item>
+        <item>Slowness (4:00)</item>
+        <item>Slowness (0:20)</item>
+        <item>Strength (3:00)</item>
+        <item>Strength (8:00)</item>
+        <item>Strength (1:30)</item>
+        <item>Speed (3:00)</item>
+        <item>Speed (8:00)</item>
+        <item>Speed (1:30)</item>
+        <item>Slowness IV (0:20), Resistance III (0:20)</item>
+        <item>Slowness IV (0:40), Resistance III (0:40)</item>
+        <item>Slowness IV (2:00), Resistance III (2:00)</item>
+        <item>Water Breathing (3:00)</item>
+        <item>Water Breathing (8:00)</item>
+        <item>Weakness (1:30)</item>
+        <item>Weakness (4:00)</item>
+    </string-array>
+
+    <string-array name="corresponding_potion_drawables">
+        <item>@drawable/mcbgassets_bottle_waterbottle</item>
+        <item>@drawable/mcbgassets_bottle_awkwardpotion</item>
+        <item>@drawable/mcbgassets_bottle_thickpotion</item>
+        <item>@drawable/mcbgassets_bottle_mundanepotion</item>
+        <item>@drawable/mcbgassets_bottle_fireresistance</item>
+        <item>@drawable/mcbgassets_bottle_fireresistance</item>
+        <item>@drawable/mcbgassets_bottle_harming</item>
+        <item>@drawable/mcbgassets_bottle_harming</item>
+        <item>@drawable/mcbgassets_bottle_healing</item>
+        <item>@drawable/mcbgassets_bottle_healing</item>
+        <item>@drawable/mcbgassets_bottle_invisibility</item>
+        <item>@drawable/mcbgassets_bottle_invisibility</item>
+        <item>@drawable/mcbgassets_bottle_leaping</item>
+        <item>@drawable/mcbgassets_bottle_leaping</item>
+        <item>@drawable/mcbgassets_bottle_leaping</item>
+        <item>@drawable/mcbgassets_bottle_nightvision</item>
+        <item>@drawable/mcbgassets_bottle_nightvision</item>
+        <item>@drawable/mcbgassets_bottle_poison</item>
+        <item>@drawable/mcbgassets_bottle_poison</item>
+        <item>@drawable/mcbgassets_bottle_poison</item>
+        <item>@drawable/mcbgassets_bottle_regeneration</item>
+        <item>@drawable/mcbgassets_bottle_regeneration</item>
+        <item>@drawable/mcbgassets_bottle_regeneration</item>
+        <item>@drawable/mcbgassets_bottle_slowfalling</item>
+        <item>@drawable/mcbgassets_bottle_slowfalling</item>
+        <item>@drawable/mcbgassets_bottle_slowness</item>
+        <item>@drawable/mcbgassets_bottle_slowness</item>
+        <item>@drawable/mcbgassets_bottle_slowness</item>
+        <item>@drawable/mcbgassets_bottle_strength</item>
+        <item>@drawable/mcbgassets_bottle_strength</item>
+        <item>@drawable/mcbgassets_bottle_strength</item>
+        <item>@drawable/mcbgassets_bottle_swiftness</item>
+        <item>@drawable/mcbgassets_bottle_swiftness</item>
+        <item>@drawable/mcbgassets_bottle_swiftness</item>
+        <item>@drawable/mcbgassets_bottle_turtlemaster</item>
+        <item>@drawable/mcbgassets_bottle_turtlemaster</item>
+        <item>@drawable/mcbgassets_bottle_turtlemaster</item>
+        <item>@drawable/mcbgassets_bottle_waterbreathing</item>
+        <item>@drawable/mcbgassets_bottle_waterbreathing</item>
+        <item>@drawable/mcbgassets_bottle_weakness</item>
+        <item>@drawable/mcbgassets_bottle_weakness</item>
+    </string-array>
+</resources>

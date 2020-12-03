@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkd_netherbrickwall">
+
+    <ScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:id="@+id/brewMCheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="48dp"
+                android:text="@string/header_brewmc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/brewMClogo"
+                android:layout_width="126dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/contentDescription_mcpotion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mcbg_appicon_mcpotion" />
+
+            <!-- https://developer.android.com/reference/android/widget/HorizontalScrollView -->
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/brewMClogo">
+
+                <LinearLayout
+                    android:id="@+id/tier1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_nw"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_newa" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_blpo" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_ghte" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_glmesl" />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView10"-->
+                    <!--                        android:layout_width="@dimen/const_90dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_margin="10dp"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:background="@color/blaze_orange"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="updateSelection"-->
+                    <!--                        app:srcCompat="@drawable/mcbgassets_goca" />-->
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_macr" />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView12"-->
+                    <!--                        android:layout_width="@dimen/const_90dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:layout_margin="10dp"-->
+                    <!--                        android:background="@color/blaze_orange"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="updateSelection"-->
+                    <!--                        app:srcCompat="@drawable/mcbgassets_phme" />-->
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView13"-->
+                    <!--                        android:layout_width="@dimen/const_90dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:layout_margin="10dp"-->
+                    <!--                        android:background="@color/blaze_orange"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="updateSelection"-->
+                    <!--                        app:srcCompat="@drawable/mcbgassets_pu" />-->
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_rafo" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_spey" />
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_su" />
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView17"-->
+                    <!--                        android:layout_width="@dimen/const_90dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:layout_margin="10dp"-->
+                    <!--                        android:background="@color/blaze_orange"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="updateSelection"-->
+                    <!--                        app:srcCompat="@drawable/mcbgassets_tuhe" />-->
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier1" />
+
+            <ImageView
+                android:id="@+id/potion_display"
+                android:layout_width="161dp"
+                android:layout_height="159dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:srcCompat="@drawable/mcbgassets_bottle_waterbottle" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/potion_display" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredient_tier1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
