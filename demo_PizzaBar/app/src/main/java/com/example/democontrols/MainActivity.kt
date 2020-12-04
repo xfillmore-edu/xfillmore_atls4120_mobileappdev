@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         var ordermessage = "Here's the order: "
         var sauce:CharSequence = ""
         var crust:CharSequence = ""
-        var toppingList = "" // String
+        var toppingList = " " // String
 
         val sauceID = radiogroup_sauce.checkedRadioButtonId // returns ID of radio button
         val crustID = radioGroup_crust.checkedRadioButtonId
@@ -62,7 +62,17 @@ class MainActivity : AppCompatActivity() {
         // Kotlin conditional expression instead
         // toppinglist = (if (toppinglist.isNotEmpty()) "with $toppinglist" else "").toString()
 
+        // spinner
+        var spinnervar = spinner.selectedItem
+
+        // switch
+        if (gluten_switch.isChecked) {
+            toppinglist = gluten_switch.text.toString() + toppingList
+        }
+
         text_submittedorder.text = ordermessage
+
+
     }
 }
 

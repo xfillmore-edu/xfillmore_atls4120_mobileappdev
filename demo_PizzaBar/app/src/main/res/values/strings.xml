@@ -7,4 +7,5 @@
     <string name="button_submit">Fire Up the Oven</string>
     <string name="radio_thincrust">Thin Crust</string>
     <string name="radio_thickcrust">Thick Crust</string>
+    <string name="gluten_free">Gluten-Free</string>
 </resources>
