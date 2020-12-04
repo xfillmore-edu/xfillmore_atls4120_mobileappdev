@@ -6,9 +6,10 @@ Lab 2: (WordPress) Principles of Design (Apple)\
 Lab 3: (Xcode) DoF -- slider, switch, segmented control, label manipulation, class adaptivity\
 Lab 4: (Xcode) UIKit -- alerts, steppers, text fields\
 [Lab 5]: (Xcode) Multiple View Controllers
-Lab 6: (WordPress) Princpiles of Design (Google)\
+Lab 6: (WordPress) Princples of Design (Google)\
 Lab 7 (Android Studio) -- text view, images, buttons, constraints\
-Lab 8 (Android Studio) -- switch, radio buttons, checkboxes, spinner, saving state, scroll view
+Lab 8 (Android Studio) -- switch, radio buttons, checkboxes, spinner, saving state, scroll view\
+Lab 9 (Android Studio) -- FAB, implicit and explicit intent, multiple activities
 
 Project 1: (Xcode) Answer the Call\
     -- segmented control\
@@ -18,6 +19,9 @@ Project 1: (Xcode) Answer the Call\
     -- buttons\
     -- random number generation\
     -- timer
+    
+Project 2: (Android Studio) BrewMC\
+    -- horizontal scroll view
 
 Demos:
 * (Xcode) eCarle -- basic multiple images and buttons
