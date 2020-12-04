@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Dynamic constraint layouts: Barrier https://constraintlayout.com/basics/barriers.html -->
+<!-- in future... consolidate identical subtiers to reduce total number of views (lint max 80) -->
+
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkd_netherbrickwall">
+
+    <ScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:id="@+id/brewMCheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="48dp"
+                android:text="@string/header_brewmc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/brewMClogo"
+                android:layout_width="126dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/contentDescription_mcpotion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mcbg_appicon_mcpotion" />
+
+            <!-- https://developer.android.com/reference/android/widget/HorizontalScrollView -->
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/brewMClogo">
+
+                <LinearLayout
+                    android:id="@+id/tier1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_nw"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_newa" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_blaze"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_blpo" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ghast"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_ghte" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_melon"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_glmesl" />
+
+                    <!-- EXCLUDE_tier1 -->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView10"-->
+<!--                        android:layout_width="@dimen/const_90dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@color/blaze_orange"-->
+<!--                        android:clickable="true"-->
+<!--                        android:onClick="updateSelection"-->
+<!--                        app:srcCompat="@drawable/mcbgassets_goca" />-->
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_magcre"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_macr" />
+
+                    <!-- EXCLUDE_tier1 -->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView12"-->
+<!--                        android:layout_width="@dimen/const_90dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:background="@color/blaze_orange"-->
+<!--                        android:clickable="true"-->
+<!--                        android:onClick="updateSelection"-->
+<!--                        app:srcCompat="@drawable/mcbgassets_phme" />-->
+
+                    <!-- EXCLUDE_tier1 -->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView13"-->
+<!--                        android:layout_width="@dimen/const_90dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:background="@color/blaze_orange"-->
+<!--                        android:clickable="true"-->
+<!--                        android:onClick="updateSelection"-->
+<!--                        app:srcCompat="@drawable/mcbgassets_pu" />-->
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_rabbit"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_rafo" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_speye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_spey" />
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_sugar"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_su" />
+
+                    <!-- EXCLUDE_tier1 -->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView17"-->
+<!--                        android:layout_width="@dimen/const_90dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:background="@color/blaze_orange"-->
+<!--                        android:clickable="true"-->
+<!--                        android:onClick="updateSelection"-->
+<!--                        app:srcCompat="@drawable/mcbgassets_tuhe" />-->
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier1" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier2a"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredient_tier1">
+
+                <LinearLayout
+                    android:id="@+id/tier2a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView19"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_rabbit"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_rafo" />
+
+                    <ImageView
+                        android:id="@+id/imageView20"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_blaze"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_blpo" />
+
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_sugar"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_su" />
+
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_speye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_spey" />
+
+                    <ImageView
+                        android:id="@+id/imageView23"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ghast"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_ghte" />
+
+                    <ImageView
+                        android:id="@+id/imageView24"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_carrot"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_goca" />
+
+                    <ImageView
+                        android:id="@+id/imageView25"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_puffer"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_pu" />
+
+                    <ImageView
+                        android:id="@+id/imageView26"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_phantom"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_phme" />
+
+                    <ImageView
+                        android:id="@+id/imageView27"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_magcre"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_macr" />
+
+                    <ImageView
+                        android:id="@+id/imageView28"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_melon"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_glmesl" />
+
+                    <ImageView
+                        android:id="@+id/imageView29"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_turtle"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_tuhe" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier2a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier2a" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier2b"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredient_tier1">
+
+                <LinearLayout
+                    android:id="@+id/tier2b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView31"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier2b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier2b" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier2c"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ingredient_tier1">
+
+                <LinearLayout
+                    android:id="@+id/tier2c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView32"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView33"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier2c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier2c" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_tier1tier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="ingredient_tier1,ingredient_tier2a,ingredient_tier2b,ingredient_tier2c"
+                tools:layout_editor_absoluteY="590dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier3a"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier1tier2">
+
+                <LinearLayout
+                    android:id="@+id/tier3a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView35"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView36"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView37"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+
+                    <ImageView
+                        android:id="@+id/imageView38"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier3a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier3a" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier3b"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier1tier2">
+
+                <LinearLayout
+                    android:id="@+id/tier3b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView39"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView40"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView41"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier3b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier3b" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier3c"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier1tier2">
+
+                <LinearLayout
+                    android:id="@+id/tier3c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView42"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView43"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+
+                    <ImageView
+                        android:id="@+id/imageView44"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier3c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier3c" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier3d"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier1tier2">
+
+                <LinearLayout
+                    android:id="@+id/tier3d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView45"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView46"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier3d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier3d" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier3e"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier1tier2">
+
+                <LinearLayout
+                    android:id="@+id/tier3e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView47"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView48"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView49"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier3e"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier3e" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_tier3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="barrier_tier1tier2,ingredient_tier3a,ingredient_tier3b,ingredient_tier3c,ingredient_tier3d,ingredient_tier3e"
+                tools:layout_editor_absoluteY="590dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4a"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView50"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView51"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4a" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4b"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView52"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView53"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4b" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4c"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView54"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView55"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4c" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4d"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView56"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView57"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4d" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4e"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView58"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView59"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_ferspeye"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_fespey" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4e"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4e" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4f"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView61"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView62"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4f" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4g"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4g"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView63"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView64"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+
+                    <ImageView
+                        android:id="@+id/imageView65"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4g" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier4h"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier3">
+
+                <LinearLayout
+                    android:id="@+id/tier4h"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView66"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView67"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier4h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier4h" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_tier4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="barrier_tier3,ingredient_tier4a,ingredient_tier4b,ingredient_tier4c,ingredient_tier4d,ingredient_tier4e,ingredient_tier4f,ingredient_tier4g,ingredient_tier4h"
+                tools:layout_editor_absoluteY="590dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier5a"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier4">
+
+                <LinearLayout
+                    android:id="@+id/tier5a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView68"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView69"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_gsdust"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_gldu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier5a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier5a" />
+
+            <HorizontalScrollView
+                android:id="@+id/hscroll_tier5b"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:clipChildren="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier4">
+
+                <LinearLayout
+                    android:id="@+id/tier5b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageView70"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_yellow"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_barrier"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_nonebarrier" />
+
+                    <ImageView
+                        android:id="@+id/imageView71"
+                        android:layout_width="@dimen/const_90dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/blaze_orange"
+                        android:clickable="true"
+                        android:contentDescription="@string/contentDescription_ing_redstone"
+                        android:onClick="updateSelection"
+                        app:srcCompat="@drawable/mcbgassets_re" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/ingredient_tier5b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hscroll_tier5b" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_tier5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="barrier_tier4,ingredient_tier5a,ingredient_tier5b"
+                tools:layout_editor_absoluteY="590dp" />
+
+            <TextView
+                android:id="@+id/potion_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_tier5" />
+
+            <ImageView
+                android:id="@+id/potion_display"
+                android:layout_width="161dp"
+                android:layout_height="159dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/contentDescription_potion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/potion_name" />
+
+            <TextView
+                android:id="@+id/potion_effect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/potion_display" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
