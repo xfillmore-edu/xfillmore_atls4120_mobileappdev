@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Map Demo</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- permissions dialogues -->
+    <string name='dialogTitle'>Location access</string>
+    <string name='dialogMessage'>Location access needed for this app to show your current location</string>
+    <string name='dialogOK'>OK</string>
+    <string name='dialogCancel'>Cancel</string>
+</resources>
